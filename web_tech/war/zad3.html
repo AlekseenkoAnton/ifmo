@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/my_style.css"
+	media="all" />
+<link rel="stylesheet" type="text/css" href="css/body.css" media="all" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<style>
+.fix {
+	width: 360px;
+	height: 270px;
+	background: url('../img/div_bg_fix.png');
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	margin: 10% 5% auto auto;
+}
+
+#result_table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.cell {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 16pt;
+}
+
+.cell:HOVER {
+	background-color: #D3D3D3;
+}
+
+</style>
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script type="text/javascript">
+	$(function() {
+		$('#btn').click(function() {
+			var one = $('#first').val();
+			var two = $('#second').val();
+
+			$('#result_table').load("/zad3?first=" + one + "&second=" + two);
+		});
+	});
+
+	function test(x, y) {
+		//alert('Десятичное значение: ' + x + '\nШестнадцатиричное значение: '
+		//		+ y.toString(16).toUpperCase());
+		document.getElementById("symb").innerHTML = String.fromCharCode(x);
+		document.getElementById("dec").innerHTML = x;
+		document.getElementById("hex").innerHTML = "0x"
+				+ y.toString(16).toUpperCase();
+	};
+</script>
+<body>
+	<div class="fix" align="center">
+		<table>
+			<tr>
+				<td width="300px" style="padding: 7px;">Начальное значение:</td>
+				<td width="100px"><input type="text" id="first" size="3" /></td>
+			<tr>
+				<td width="300px" style="padding: 7px;">Конечное значение:</td>
+				<td width="100px"><input type="text" id="second" size="3" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="btn" class="btns">Show</button> <br>
+				<hr>
+				</td>
+			</tr>
+			<tr>
+				<td width="300px" style="padding: 7px;">Выбранный символ:</td>
+				<td width="100px" align="center"><span id="symb"></span></td>
+			</tr>
+			<tr>
+				<td width="300px" style="padding: 7px;">Десятичное значение:</td>
+				<td width="100px" align="center"><span id="dec"></span></td>
+			</tr>
+			<tr>
+				<td width="300px" style="padding: 7px;">Шестнадцатиричное значение:</td>
+				<td width="100px" align="center"><span id="hex"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><a href="index.html"
+					class="metro">Назад</a></td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 50%; margin: 40px 45% auto auto;">
+		<div id="result_table"></div>
+	</div>
+</body>
+</html>

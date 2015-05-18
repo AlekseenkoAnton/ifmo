@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Hello App Engine</title>
+<link rel="stylesheet" type="text/css" href="css/my_style.css"
+	media="all" />
+<link rel="stylesheet" type="text/css" href="css/body.css" media="all" />
+<script src="js/jquery-2.1.0.min.js"></script>
+</head>
+
+<script type="text/javascript">
+	function Select(action, number) {
+		if (action == 1) {
+			if (number == 1) {
+				var carId = document.getElementById('car1').value;
+				$('#descrCar1').load(
+						"/zad4?action=" + action + "&carId=" + carId
+								+ "&number=" + number);
+			}
+			if (number == 2) {
+				var carId = document.getElementById('car2').value;
+				$('#descrCar2').load(
+						"/zad4?action=" + action + "&carId=" + carId
+								+ "&number=" + number);
+			}
+		}
+		if (action == 2) {
+			var trackId = document.getElementById('tracks').value;
+			$('#track').load("/zad4?action=" + action + "&trackId=" + trackId);
+		}
+		if (action == 3) {
+			var rain = document.getElementById('rain').value;
+			var wind = $('#wind').val();
+			var carId1 = document.getElementById('car1').value;
+			var carId2 = document.getElementById('car2').value;
+			var trackId = document.getElementById('tracks').value;
+			$('#result').load(
+					"/zad4?action=" + action + "&rain=" + rain + "&wind="
+							+ wind + "&carId1=" + carId1 + "&carId2=" + carId2
+							+ "&trackId=" + trackId);
+		}
+
+	}
+</script>
+
+<body>
+	<div class="div_bg">
+		<table style="margin: auto; opacity:">
+			<tr>
+				<td>Выберите первый автомобиль:</td>
+				<td>Выберите второй автомобиль:</td>
+			</tr>
+			<tr height="40px">
+				<td><select id="car1" onchange="Select(1,1)"
+					style="width: 200px">
+						<option selected="selected" disabled="disabled"></option>
+						<option value="1">Chevrolet Camaro</option>
+						<option value="2">Ford Mustang</option>
+						<option value="3">Audi R8</option>
+						<option value="4">Lada Priora</option>
+				</select></td>
+				<td><select id="car2" onchange="Select(1,2)"
+					style="width: 200px">
+						<option selected="selected" disabled="disabled"></option>
+						<option value="1">Chevrolet Camaro</option>
+						<option value="2">Ford Mustang</option>
+						<option value="3">Audi R8</option>
+						<option value="4">Lada Priora</option>
+				</select></td>
+			</tr>
+			<tr height="40px">
+				<td>Выберите трассу:</td>
+				<td><select id="tracks" onchange="Select(2,1)"
+					style="width: 200px">
+						<option selected="selected" disabled="disabled"></option>
+						<option value="1">Лондон</option>
+						<option value="2">Париж</option>
+						<option value="3">Флорида</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2" id="track" height="300px" align="center"></td>
+			</tr>
+			<tr height="40px">
+				<td width="300px">Выберите интенсивность осадков:</td>
+				<td><select id="rain" style="width: 200px">
+						<option selected="selected" disabled="disabled"></option>
+						<option value="0">Без осадков</option>
+						<option value="0.1">Слабый дождь</option>
+						<option value="0.3">Сильный дождь</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Введите скорость ветра (м/c):</td>
+				<td><input type="text" id="wind" style="width: 40px"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" id="race"
+					value="Race" onclick="Select(3,1)" style="margin: 10px auto"
+					class="btns"></td>
+			</tr>
+		</table>
+		<table style="margin: 30px auto auto auto; width: 520px">
+			<tr>
+				<td height="100px" width="300px" id="descrCar1"></td>
+				<td height="100px" width="300px" id="descrCar2"></td>
+			</tr>
+			<tr>
+				<td id="result" colspan="2" align="center" bgcolor="#ddd"></td>
+			</tr>
+		</table>
+	</div>
+	<div style="position: fixed; left: 30px; bottom: 20px">
+		<a href="index.html" class="metro">Назад</a>
+	</div>
+</body>
+</html>

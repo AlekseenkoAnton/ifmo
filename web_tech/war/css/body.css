@@ -1,0 +1,12 @@
+body {
+    background-image: url(https://dl-web.dropbox.com/get/body_background.JPG?_subject_uid=72089928&w=AAARvmlNmAql51kcSAovvD9gaGQnZg0Hu9nvtELkN8CtCA);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:#464646;
+ 
+    /* Эквивалентная сокращенная запись
+    * background: url(background-photo.jpg) center center cover no-repeat fixed;
+    */
+}

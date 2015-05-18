@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Web_tech</servlet-name>
+		<servlet-class>edu.ifmo.Web_techServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Zad2</servlet-name>
+		<servlet-class>edu.ifmo.zad2.Zad2</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Zad3</servlet-name>
+		<servlet-class>edu.ifmo.zad3.Zad3</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewQuestion</servlet-name>
+		<servlet-class>edu.ifmo.dop.NewQuestion</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Get_Quest</servlet-name>
+		<servlet-class>edu.ifmo.dop.GetQuest</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Zad4</servlet-name>
+		<servlet-class>edu.ifmo.zad4.Zad4</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Web_tech</servlet-name>
+		<url-pattern>/web_tech</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Zad2</servlet-name>
+		<url-pattern>/zad2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Zad3</servlet-name>
+		<url-pattern>/zad3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Zad4</servlet-name>
+		<url-pattern>/zad4</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewQuestion</servlet-name>
+		<url-pattern>/newquestion</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Get_Quest</servlet-name>
+		<url-pattern>/get_quest</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

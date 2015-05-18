@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/my_style.css"
+	media="all" />
+<link rel="stylesheet" type="text/css" href="css/body.css" media="all" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script>
+	$(function() {
+		$('#click_1').click(function() {
+			var m = $('#m').val();
+			var n = $('#n').val();
+			$('#answer1').load("/zad2?m=" + m + "&n=" + n + "&action=1");
+		});
+
+		$('#click_2').click(
+				function() {
+					var a = $('#a').val();
+					var b = $('#b').val();
+					var c = $('#c').val();
+					$('#answer2').load(
+							"/zad2?a=" + a + "&b=" + b + "&c=" + c
+									+ "&action=2");
+				});
+
+		$('#click_3').click(function() {
+			$('#answer3').load("/zad2?action=3");
+		});
+
+		$('#click_3_1').click(function() {
+			$('#answer3').load("/zad2?action=3_1");
+		});
+
+		$('#click_3_2').click(function() {
+			$('#answer4').load("/zad2?action=3_1");
+		});
+
+		$('#click_4').click(function() {
+			$('#answer4').load("/zad2?action=4");
+		});
+	});
+</script>
+<body>
+	<div class="div_bg" align="center">
+		<div class="cls">
+			<h3>Задание 3.1</h3>
+			<hr>
+			m= <input type="text" id="m" placeholder="Введите m"
+				style="width: 70px" /> n= <input type="text" id="n"
+				placeholder="Введите n" style="width: 70px" />
+			<button id="click_1" class="btns">Click me</button>
+			<p>
+				Ответ: <span style="color: black" id="answer1"></span>
+			</p>
+		</div>
+
+		<div class="cls">
+			<h3>Задание 3.2</h3>
+			<hr>
+			<input type="text" id="a" placeholder="a" style="width: 30px" />x^2
+			+ <input type="text" id="b" placeholder="b" style="width: 30px" />x
+			+ <input type="text" id="c" placeholder="c" style="width: 30px" />
+			<button id="click_2" class="btns">Click me</button>
+			<p>
+				Корни: <span style="color: black" id="answer2"></span>
+			</p>
+		</div>
+
+		<div class="cls">
+			<h3>Задание 3.3</h3>
+			<hr>
+			<p>
+				<button id="click_3" class="btns">Show</button>
+				<button id="click_3_1" class="btns">Hide</button>
+			</p>
+			<p>
+				<span style="color: black" id="answer3"></span>
+			</p>
+		</div>
+
+		<div class="cls">
+			<h3>Задание 3.4</h3>
+			<hr>
+			<p>
+				<button id="click_4" class="btns">Show</button>
+				<button id="click_3_2" class="btns">Hide</button>
+			</p>
+			<p>
+				<span style="color: black" id="answer4"></span>
+			</p>
+		</div>
+		<div style="position: fixed; left: 30px; bottom: 20px">
+			<a href="index.html" class="metro">Назад</a>
+		</div>
+	</div>
+</body>
+</html>
